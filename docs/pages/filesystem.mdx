@@ -1,0 +1,105 @@
+# FileSystem
+
+## Introduction
+
+FileSystem are utils for working with a directories and files
+
+## filesystem.packageCode
+
+```js
+import utils from 'rise-cli-foundation'
+await utils.pacakgeCode({
+    location: './source/folder'
+    target: './target/folder'
+    name: 'myZip.zip'
+})
+```
+
+## filesystem.getDirectories
+
+```ts
+import utils from 'rise-cli-foundation'
+const folders = await utils.getDirectories('./source/folder')
+```
+
+## filesystem.makeDir
+
+```ts
+import utils from 'rise-cli-foundation'
+await utils.makeDir('/absolute/path/folderToMake')
+```
+
+## filesystem.makeDirForProject
+
+The difference between `makeDir` and `makeDirForProject` is the former
+takes an absolute path, whereas the later prefixes `process.cwd()` to the path
+allowing you to specific the path starting from the project folder.
+
+```ts
+import utils from 'rise-cli-foundation'
+await utils.makeDirForProject('/relative/path/folderToMake')
+```
+
+## filesystem.copyDirectory
+
+```ts
+import utils from 'rise-cli-foundation'
+await utils.copyDirectory({
+    source: './source/folder'
+    target: './target/folder'
+})
+```
+
+## filesystem.getFile
+
+```ts
+import utils from 'rise-cli-foundation'
+const file = await utils.getFile('./source/folder/file.zip')
+```
+
+## filesystem.getJsFile
+
+```ts
+import utils from 'rise-cli-foundation'
+const file = await utils.getJsFile('/absolute/path/folder/file.js')
+```
+
+## filesystem.getJsFileFromProject
+
+The difference between `getJsFile` and `getJsFileFromProject` is the former
+takes an absolute path, whereas the later prefixes `process.cwd()` to the path
+allowing you to specific the path starting from the project folder.
+
+```ts
+import utils from 'rise-cli-foundation'
+const file = await utils.getJsFileFromProject('relatove/path/folder/file.js')
+```
+
+## filesystem.writeFile
+
+```ts
+import utils from 'rise-cli-foundation'
+const file = await utils.writeFile({
+    path: 'target/folder/file.js',
+    content: `module.exports = {
+    id: '1234'
+}`
+})
+```
+
+## filesystem.getProjectPath
+
+```ts
+import utils from 'rise-cli-foundation'
+const path = await utils.getProjectPath()
+```
+
+## filesystem.copyFile
+
+```ts
+import utils from 'rise-cli-foundation'
+const path = await utils.copyFile({
+    source: 'source/folder/file.js',
+    target: 'target/folder/file.js'
+})
+```
