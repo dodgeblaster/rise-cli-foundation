@@ -20,9 +20,23 @@ module.exports = {
                     type: 'BUILD',
                     name: 'build',
                     script: '/build.yml',
-                    env: {},
                     inputArtifact: 'sourceZip',
                     outputArtifact: 'buildZip'
+                }
+            ]
+        },
+        {
+            name: 'Publish',
+            actions: [
+                {
+                    type: 'BUILD',
+                    name: 'build',
+                    script: '/build.yml',
+                    env: {
+                        NPM_TOKEN: '@secret.NPMPublishKey'
+                    },
+                    inputArtifact: 'sourceZip',
+                    outputArtifact: 'publishedZip'
                 }
             ]
         }
