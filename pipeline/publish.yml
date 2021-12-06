@@ -7,4 +7,6 @@ phases:
     build:
         commands:
             - cd ./app && npm i
+            - echo "$NPM_TOKEN"
+            - npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
             - npm run publish
