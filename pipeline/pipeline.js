@@ -30,8 +30,8 @@ module.exports = {
             actions: [
                 {
                     type: 'BUILD',
-                    name: 'build',
-                    script: '/build.yml',
+                    name: 'publish',
+                    script: '/publish.yml',
                     env: {
                         NPM_TOKEN: '@secret.NPMPublishKey'
                     },
